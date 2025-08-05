@@ -44,7 +44,7 @@ public class DataInitializer implements CommandLineRunner {
                 210.0, 85.0, 90.0,
                 "Velvet upholstery, Oak wood frame",
                 "Navy Blue",
-                "https://example.com/images/luxe-3-seater-navy.jpg"
+                "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Scandinavian L-Shape Sectional",
@@ -55,7 +55,7 @@ public class DataInitializer implements CommandLineRunner {
                 280.0, 82.0, 160.0,
                 "Linen fabric, Pine wood frame",
                 "Light Gray",
-                "https://example.com/images/scandi-sectional-gray.jpg"
+                "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Classic Chesterfield Sofa",
@@ -66,7 +66,7 @@ public class DataInitializer implements CommandLineRunner {
                 220.0, 75.0, 95.0,
                 "Genuine leather, Hardwood frame",
                 "Cognac Brown",
-                "https://example.com/images/chesterfield-cognac.jpg"
+                "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=400&h=300&fit=crop"
             ),
 
             // Chairs
@@ -79,7 +79,7 @@ public class DataInitializer implements CommandLineRunner {
                 65.0, 120.0, 65.0,
                 "Mesh fabric, Aluminum base",
                 "Black",
-                "https://example.com/images/ergo-office-black.jpg"
+                "https://images.unsplash.com/photo-1541558869434-2840d308329a?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Mid-Century Accent Chair",
@@ -90,7 +90,7 @@ public class DataInitializer implements CommandLineRunner {
                 75.0, 80.0, 70.0,
                 "Velvet upholstery, Walnut wood legs",
                 "Emerald Green",
-                "https://example.com/images/midcentury-accent-green.jpg"
+                "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Windsor Dining Chair Set (2)",
@@ -101,7 +101,7 @@ public class DataInitializer implements CommandLineRunner {
                 45.0, 95.0, 50.0,
                 "Solid Oak wood",
                 "Natural Wood",
-                "https://example.com/images/windsor-dining-natural.jpg"
+                "https://images.unsplash.com/photo-1549497538-303791108f95?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Modern Swivel Bar Stool",
@@ -112,7 +112,7 @@ public class DataInitializer implements CommandLineRunner {
                 40.0, 110.0, 40.0,
                 "Faux leather, Chrome steel",
                 "White",
-                "https://example.com/images/swivel-barstool-white.jpg"
+                "https://images.unsplash.com/photo-1503602642458-232111445657?w=400&h=300&fit=crop"
             ),
 
             // Tables
@@ -125,7 +125,7 @@ public class DataInitializer implements CommandLineRunner {
                 180.0, 76.0, 90.0,
                 "Solid Mahogany wood",
                 "Dark Walnut",
-                "https://example.com/images/expandable-dining-walnut.jpg"
+                "https://images.unsplash.com/photo-1449247709967-d4461a6a6103?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Glass Coffee Table",
@@ -136,7 +136,7 @@ public class DataInitializer implements CommandLineRunner {
                 120.0, 45.0, 60.0,
                 "Tempered glass, Chrome steel",
                 "Clear/Chrome",
-                "https://example.com/images/glass-coffee-chrome.jpg"
+                "https://images.unsplash.com/photo-1555646199-1ba4acbfd7c0?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Rustic Console Table",
@@ -147,7 +147,7 @@ public class DataInitializer implements CommandLineRunner {
                 120.0, 80.0, 35.0,
                 "Reclaimed Pine wood",
                 "Distressed White",
-                "https://example.com/images/rustic-console-white.jpg"
+                "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Adjustable Standing Desk",
@@ -158,7 +158,7 @@ public class DataInitializer implements CommandLineRunner {
                 150.0, 120.0, 75.0,
                 "Bamboo top, Steel frame",
                 "Natural/Black",
-                "https://example.com/images/standing-desk-bamboo.jpg"
+                "https://images.unsplash.com/photo-1541558869434-2840d308329a?w=400&h=300&fit=crop"
             ),
 
             // Beds
@@ -171,7 +171,7 @@ public class DataInitializer implements CommandLineRunner {
                 193.0, 120.0, 213.0,
                 "Linen upholstery, Solid wood frame",
                 "Charcoal Gray",
-                "https://example.com/images/platform-bed-king-gray.jpg"
+                "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Queen Storage Bed Frame",
@@ -182,7 +182,7 @@ public class DataInitializer implements CommandLineRunner {
                 153.0, 90.0, 203.0,
                 "Engineered wood",
                 "Espresso",
-                "https://example.com/images/storage-bed-queen-espresso.jpg"
+                "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Twin Bunk Bed",
@@ -193,7 +193,7 @@ public class DataInitializer implements CommandLineRunner {
                 99.0, 165.0, 203.0,
                 "Solid Pine wood",
                 "White",
-                "https://example.com/images/bunk-bed-twin-white.jpg"
+                "https://images.unsplash.com/photo-1571508601382-5deb4ac9ce62?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Adjustable Base Bed Frame",
@@ -204,7 +204,7 @@ public class DataInitializer implements CommandLineRunner {
                 153.0, 40.0, 203.0,
                 "Steel frame, Memory foam compatible",
                 "Black",
-                "https://example.com/images/adjustable-bed-queen.jpg"
+                "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop"
             ),
 
             // Storage
@@ -217,7 +217,7 @@ public class DataInitializer implements CommandLineRunner {
                 150.0, 80.0, 50.0,
                 "Solid wood, Metal hardware",
                 "Natural Oak",
-                "https://example.com/images/dresser-6drawer-oak.jpg"
+                "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Modular Bookshelf System",
@@ -228,7 +228,7 @@ public class DataInitializer implements CommandLineRunner {
                 80.0, 180.0, 30.0,
                 "Particleboard with laminate",
                 "White",
-                "https://example.com/images/bookshelf-modular-white.jpg"
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Ottoman Storage Bench",
@@ -239,7 +239,7 @@ public class DataInitializer implements CommandLineRunner {
                 120.0, 45.0, 45.0,
                 "Faux leather, MDF",
                 "Brown",
-                "https://example.com/images/ottoman-storage-brown.jpg"
+                "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Wardrobe Armoire",
@@ -250,7 +250,7 @@ public class DataInitializer implements CommandLineRunner {
                 100.0, 200.0, 60.0,
                 "Engineered wood",
                 "White",
-                "https://example.com/images/wardrobe-armoire-white.jpg"
+                "https://images.unsplash.com/photo-1558618644-fcd25c85cd64?w=400&h=300&fit=crop"
             ),
             new Product(
                 "Industrial Storage Cabinet",
@@ -261,7 +261,7 @@ public class DataInitializer implements CommandLineRunner {
                 90.0, 180.0, 45.0,
                 "Powder-coated steel",
                 "Matte Black",
-                "https://example.com/images/industrial-cabinet-black.jpg"
+                "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop"
             )
         );
 
