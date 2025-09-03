@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">7</div>
+<div class="counter">36</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.506s</div>
+<div class="counter">0.040s</div>
 <p>duration</p>
 </div>
 </td>
@@ -63,9 +63,6 @@
 <li>
 <a href="#tab0">Tests</a>
 </li>
-<li>
-<a href="#tab1">Standard error</a>
-</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -79,7 +76,17 @@
 </thead>
 <tr>
 <td class="success">createProduct_WithValidData_ShouldReturnProductResponse()</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createProducts_WithInvalidRequest_ShouldThrowException()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createProducts_WithValidRequests_ShouldReturnCreatedProducts()</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -89,7 +96,27 @@
 </tr>
 <tr>
 <td class="success">deleteProduct_WithNonExistingId_ShouldThrowException()</td>
-<td class="success">0.494s</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getAllProducts_ShouldReturnAllProducts()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getInStockProducts_ShouldReturnInStockProducts()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getLowStockProducts_WithNullThreshold_ShouldUseDefault()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getLowStockProducts_WithThreshold_ShouldReturnLowStockProducts()</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -99,30 +126,135 @@
 </tr>
 <tr>
 <td class="success">getProductById_WithNonExistingId_ShouldThrowException()</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getProductFilters_ShouldReturnAvailableFilters()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getProductsByCategory_ShouldReturnCategoryProducts()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getProductsByDimensions_ShouldReturnMatchingProducts()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getProductsByPriceRange_WithMinGreaterThanMax_ShouldThrowException()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getProductsByPriceRange_WithNullValues_ShouldUseDefaults()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">getProductsByPriceRange_WithValidRange_ShouldReturnProducts()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">isProductNameUnique_WithEmptyName_ShouldReturnFalse()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">isProductNameUnique_WithExistingNameButExcludingSelf_ShouldReturnTrue()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">isProductNameUnique_WithExistingName_ShouldReturnFalse()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">isProductNameUnique_WithNullName_ShouldReturnFalse()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">isProductNameUnique_WithUniqueName_ShouldReturnTrue()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">searchByName_ShouldReturnMatchingProducts()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">searchProducts_WithFilters_ShouldReturnFilteredProducts()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateProduct_WithNonExistingId_ShouldThrowException()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updateProduct_WithValidData_ShouldUpdateProduct()</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">updateStock_WithNegativeQuantity_ShouldThrowException()</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">updateStock_WithValidQuantity_ShouldUpdateStock()</td>
-<td class="success">0.004s</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validateProductRequest_WithEmptyCategory_ShouldThrowException()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validateProductRequest_WithEmptyName_ShouldThrowException()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validateProductRequest_WithNegativePrice_ShouldThrowException()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validateProductRequest_WithNullCategory_ShouldThrowException()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validateProductRequest_WithNullName_ShouldThrowException()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validateProductRequest_WithNullPrice_ShouldThrowException()</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validateProductRequest_WithNullStock_ShouldThrowException()</td>
+<td class="success">0s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">validateProductRequest_WithZeroPrice_ShouldThrowException()</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 </table>
-</div>
-<div id="tab1" class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>WARNING: A Java agent has been loaded dynamically (/Users/nate/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-</pre>
-</span>
 </div>
 </div>
 <div id="footer">
@@ -132,7 +264,7 @@ WARNING: Dynamic loading of agents will be disallowed by default in a future rel
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at Jun 22, 2025, 11:04:46 PM</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at Sep 3, 2025, 4:53:29 PM</p>
 </div>
 </div>
 </body>
