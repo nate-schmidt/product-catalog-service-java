@@ -1,7 +1,9 @@
 package com.furniture.ecommerce.config;
 
 import com.furniture.ecommerce.model.Product;
+import com.furniture.ecommerce.model.Coupon;
 import com.furniture.ecommerce.repository.ProductRepository;
+import com.furniture.ecommerce.repository.CouponRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -9,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,20 +21,33 @@ public class DataInitializer implements CommandLineRunner {
 
     private static final Logger logger = LoggerFactory.getLogger(DataInitializer.class);
     private final ProductRepository productRepository;
+    private final CouponRepository couponRepository;
 
-    public DataInitializer(ProductRepository productRepository) {
+    public DataInitializer(ProductRepository productRepository, CouponRepository couponRepository) {
         this.productRepository = productRepository;
+        this.couponRepository = couponRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
         // Check if data already exists
-        if (productRepository.count() > 0) {
+        if (productRepository.count() > 0 && couponRepository.count() > 0) {
             logger.info("Data already initialized, skipping...");
             return;
         }
 
-        logger.info("Initializing sample furniture data...");
+        if (productRepository.count() == 0) {
+            logger.info("Initializing sample furniture data...");
+            initializeProducts();
+        }
+        
+        if (couponRepository.count() == 0) {
+            logger.info("Initializing sample coupon data...");
+            initializeCoupons();
+        }
+    }
+    
+    private void initializeProducts() {
 
         List<Product> products = Arrays.asList(
             // Sofas
@@ -268,5 +284,127 @@ public class DataInitializer implements CommandLineRunner {
         // Save all products
         List<Product> savedProducts = productRepository.saveAll(products);
         logger.info("Successfully initialized {} furniture products", savedProducts.size());
+    }
+    
+    private void initializeCoupons() {
+        LocalDateTime now = LocalDateTime.now();
+        
+        List<Coupon> coupons = Arrays.asList(
+            // Percentage discount coupons
+            new Coupon(
+                null, // id will be auto-generated
+                "WELCOME10",
+                "Welcome discount for new customers - 10% off",
+                Coupon.DiscountType.PERCENTAGE,
+                new BigDecimal("10.00"), // 10%
+                new BigDecimal("100.00"), // minimum $100 order
+                new BigDecimal("50.00"), // max $50 discount
+                null, // unlimited usage
+                0, // used count
+                now.minusDays(1), // valid from yesterday
+                now.plusDays(30), // valid for 30 days
+                true, // active
+                null, // created at (will be set by @PrePersist)
+                null  // updated at (will be set by @PrePersist)
+            ),
+            new Coupon(
+                null,
+                "SAVE25",
+                "Save 25% on orders over $500",
+                Coupon.DiscountType.PERCENTAGE,
+                new BigDecimal("25.00"), // 25%
+                new BigDecimal("500.00"), // minimum $500 order
+                new BigDecimal("150.00"), // max $150 discount
+                100, // limited to 100 uses
+                0, // used count
+                now.minusDays(1),
+                now.plusDays(60), // valid for 60 days
+                true,
+                null,
+                null
+            ),
+            
+            // Fixed amount discount coupons
+            new Coupon(
+                null,
+                "FURNITURE50",
+                "Get $50 off your furniture order",
+                Coupon.DiscountType.FIXED_AMOUNT,
+                new BigDecimal("50.00"), // $50 off
+                new BigDecimal("300.00"), // minimum $300 order
+                null, // no max discount (fixed amount)
+                50, // limited to 50 uses
+                0, // used count
+                now.minusDays(1),
+                now.plusDays(45),
+                true,
+                null,
+                null
+            ),
+            new Coupon(
+                null,
+                "FREESHIP",
+                "Free shipping on any order",
+                Coupon.DiscountType.FIXED_AMOUNT,
+                new BigDecimal("25.00"), // $25 off (typical shipping cost)
+                new BigDecimal("1.00"), // minimum $1 order
+                null, // no max discount
+                null, // unlimited usage
+                0, // used count
+                now.minusDays(1),
+                now.plusDays(90), // valid for 3 months
+                true,
+                null,
+                null
+            ),
+            
+            // Seasonal/promotional coupons
+            new Coupon(
+                null,
+                "SPRING2024",
+                "Spring sale - 15% off everything",
+                Coupon.DiscountType.PERCENTAGE,
+                new BigDecimal("15.00"), // 15%
+                new BigDecimal("200.00"), // minimum $200 order
+                new BigDecimal("100.00"), // max $100 discount
+                200, // limited to 200 uses
+                0, // used count
+                now.minusDays(1),
+                now.plusDays(21), // limited time offer
+                true,
+                null,
+                null
+            ),
+            
+            // Expired coupon for testing
+            new Coupon(
+                null,
+                "EXPIRED",
+                "This coupon has expired - for testing",
+                Coupon.DiscountType.PERCENTAGE,
+                new BigDecimal("20.00"),
+                new BigDecimal("100.00"),
+                new BigDecimal("50.00"),
+                null,
+                0,
+                now.minusDays(10),
+                now.minusDays(1), // expired yesterday
+                true,
+                null,
+                null
+            )
+        );
+        
+        List<Coupon> savedCoupons = couponRepository.saveAll(coupons);
+        logger.info("Successfully initialized {} coupon codes", savedCoupons.size());
+        
+        // Log available coupons for testing
+        savedCoupons.forEach(coupon -> 
+            logger.info("Created coupon: {} - {} ({}% discount, min order: ${})", 
+                coupon.getCode(), 
+                coupon.getDescription(),
+                coupon.getDiscountValue(),
+                coupon.getMinimumOrderAmount())
+        );
     }
 } 
