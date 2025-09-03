@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.furniture.ecommerce.service.ProductServiceTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2025-06-23T06:04:45" hostname="mac" time="0.508">
+<testsuite name="com.furniture.ecommerce.service.ProductServiceTest" tests="36" skipped="0" failures="0" errors="0" timestamp="2025-09-03T16:53:29" hostname="cursor" time="0.052">
   <properties/>
-  <testcase name="deleteProduct_WithNonExistingId_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.494"/>
-  <testcase name="updateStock_WithNegativeQuantity_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.002"/>
-  <testcase name="updateStock_WithValidQuantity_ShouldUpdateStock()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.004"/>
-  <testcase name="createProduct_WithValidData_ShouldReturnProductResponse()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.002"/>
-  <testcase name="getProductById_WithNonExistingId_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.002"/>
+  <testcase name="getProductsByCategory_ShouldReturnCategoryProducts()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.005"/>
+  <testcase name="validateProductRequest_WithEmptyName_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="validateProductRequest_WithNullName_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.005"/>
+  <testcase name="deleteProduct_WithNonExistingId_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="validateProductRequest_WithNullPrice_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="isProductNameUnique_WithUniqueName_ShouldReturnTrue()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.0"/>
+  <testcase name="getProductsByPriceRange_WithMinGreaterThanMax_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.005"/>
+  <testcase name="validateProductRequest_WithNullCategory_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="updateStock_WithNegativeQuantity_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="validateProductRequest_WithNullStock_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.0"/>
+  <testcase name="updateStock_WithValidQuantity_ShouldUpdateStock()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="createProduct_WithValidData_ShouldReturnProductResponse()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="getProductFilters_ShouldReturnAvailableFilters()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="searchByName_ShouldReturnMatchingProducts()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="getProductsByDimensions_ShouldReturnMatchingProducts()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="getAllProducts_ShouldReturnAllProducts()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="isProductNameUnique_WithNullName_ShouldReturnFalse()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="updateProduct_WithNonExistingId_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="getProductById_WithNonExistingId_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="isProductNameUnique_WithExistingName_ShouldReturnFalse()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="getLowStockProducts_WithThreshold_ShouldReturnLowStockProducts()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="validateProductRequest_WithEmptyCategory_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="createProducts_WithValidRequests_ShouldReturnCreatedProducts()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="getLowStockProducts_WithNullThreshold_ShouldUseDefault()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="getInStockProducts_ShouldReturnInStockProducts()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="validateProductRequest_WithNegativePrice_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.0"/>
+  <testcase name="getProductsByPriceRange_WithValidRange_ShouldReturnProducts()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
   <testcase name="deleteProduct_WithExistingId_ShouldDelete()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="createProducts_WithInvalidRequest_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.0"/>
   <testcase name="getProductById_WithExistingId_ShouldReturnProduct()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="updateProduct_WithValidData_ShouldUpdateProduct()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="validateProductRequest_WithZeroPrice_ShouldThrowException()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.0"/>
+  <testcase name="getProductsByPriceRange_WithNullValues_ShouldUseDefaults()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.0"/>
+  <testcase name="isProductNameUnique_WithEmptyName_ShouldReturnFalse()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.0"/>
+  <testcase name="isProductNameUnique_WithExistingNameButExcludingSelf_ShouldReturnTrue()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.001"/>
+  <testcase name="searchProducts_WithFilters_ShouldReturnFilteredProducts()" classname="com.furniture.ecommerce.service.ProductServiceTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/nate/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-]]></system-err>
+  <system-err><![CDATA[]]></system-err>
 </testsuite>
