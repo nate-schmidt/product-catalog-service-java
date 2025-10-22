@@ -40,3 +40,10 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 } 
+
+// Ensure bootRun uses the configured Java toolchain (Java 17)
+tasks.named('bootRun') {
+    javaLauncher = javaToolchains.launcherFor {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}

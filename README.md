@@ -38,39 +38,21 @@ git clone <repository-url>
 cd product-catalog-service
 ```
 
-2. **Set up Java 17:**
+2. **Run the application:**
 
-**If using SDKMAN (Recommended):**
-```bash
-sdk install java 17.0.17-tem  # Install Java 17
-sdk env install                # Install versions from .sdkmanrc
-sdk env                        # Activate Java 17 for this project
-```
+The project is configured to use Gradle's Java Toolchain for Java 17.
+Gradle will auto-download a matching JDK if needed.
 
-**If using Homebrew or system Java:**
-```bash
-source setenv.sh  # Sets up Java 17 environment
-```
-
-3. **Run the application:**
-
-**Option A: With SDKMAN**
-```bash
-sdk env  # Ensure Java 17 is active
-./gradlew bootRun
-```
-
-**Option B: Use the convenience script**
-```bash
-./run.sh  # Automatically sources setenv.sh
-```
-
-**Option C: If Java 17 is already your default**
 ```bash
 ./gradlew bootRun
 ```
 
-4. Build the project (optional):
+If you prefer to manage Java locally, you can also use the helper:
+```bash
+./run.sh
+```
+
+3. Build the project (optional):
 ```bash
 ./gradlew build  # Java 17 should already be active
 ```
