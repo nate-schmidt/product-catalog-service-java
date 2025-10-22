@@ -1,6 +1,0 @@
-# SDKMAN configuration for this project
-# Automatically switches to Java 17 when entering this directory
-# Run: sdk env install (to install)
-# Run: sdk env (to activate)
-java=17.0.17-tem
-
