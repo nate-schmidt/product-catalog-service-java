@@ -38,19 +38,31 @@ git clone <repository-url>
 cd product-catalog-service
 ```
 
-2. **Run the application:**
+2. **Set up Java 17:**
 
-**Option A: Use the convenience script (Recommended)**
+**If using SDKMAN (Recommended):**
 ```bash
-./run.sh
+sdk install java 17.0.17-tem  # Install Java 17
+sdk env install                # Install versions from .sdkmanrc
+sdk env                        # Activate Java 17 for this project
 ```
 
-This script automatically sets up the Java 17 environment and starts the application.
-
-**Option B: Manual setup**
+**If using Homebrew or system Java:**
 ```bash
-source setenv.sh
+source setenv.sh  # Sets up Java 17 environment
+```
+
+3. **Run the application:**
+
+**Option A: With SDKMAN**
+```bash
+sdk env  # Ensure Java 17 is active
 ./gradlew bootRun
+```
+
+**Option B: Use the convenience script**
+```bash
+./run.sh  # Automatically sources setenv.sh
 ```
 
 **Option C: If Java 17 is already your default**
@@ -58,10 +70,9 @@ source setenv.sh
 ./gradlew bootRun
 ```
 
-3. Build the project (optional):
+4. Build the project (optional):
 ```bash
-source setenv.sh  # Ensure Java 17 is active
-./gradlew build
+./gradlew build  # Java 17 should already be active
 ```
 
 The service will start on `http://localhost:8080/api`
