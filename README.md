@@ -264,6 +264,58 @@ Content-Type: application/json
 ./gradlew test
 ```
 
+### Code Quality & Security Scanning
+
+#### Checkstyle - Java Linting
+
+This project uses [Checkstyle](https://checkstyle.org/) for Java code style and quality checks.
+
+Run Checkstyle:
+```bash
+./checkstyle.sh
+```
+
+Or run individual checks:
+```bash
+./gradlew checkstyleMain    # Check main sources
+./gradlew checkstyleTest    # Check test sources
+./gradlew checkstyle        # Check all sources
+```
+
+Reports are generated at:
+- Main: `build/reports/checkstyle/main.html`
+- Test: `build/reports/checkstyle/test.html`
+
+Configuration: `config/checkstyle/checkstyle.xml`
+
+#### Semgrep - Security Scanning
+
+This project uses [Semgrep](https://semgrep.dev/) for static analysis to detect security vulnerabilities and code quality issues.
+
+Quick scan with recommended rules:
+```bash
+./semgrep.sh
+```
+
+Or run Semgrep directly:
+```bash
+# Scan with auto-detected rules (recommended)
+semgrep scan --config=auto src/
+
+# Scan with specific rulesets
+semgrep scan --config=p/security-audit src/          # Security-focused
+semgrep scan --config=p/java src/                    # Java best practices
+semgrep scan --config=p/spring src/                  # Spring Boot specific
+semgrep scan --config=p/owasp-top-ten src/          # OWASP Top 10
+
+# Use custom rules only
+semgrep scan --config=.semgrep.yml src/
+```
+
+Configuration:
+- `.semgrep.yml`: Custom rules for Spring Boot and JPA best practices
+- `.semgrepignore`: Files and directories to exclude from scanning
+
 ### Building JAR
 ```bash
 ./gradlew clean build

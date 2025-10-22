@@ -1,0 +1,42 @@
+name: Checkstyle
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  checkstyle:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+        
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      
+    - name: Run Checkstyle
+      run: ./gradlew checkstyle
+      
+    - name: Upload Checkstyle reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: checkstyle-reports
+        path: build/reports/checkstyle/
+        retention-days: 30
+        
+    - name: Annotate code with Checkstyle results
+      if: failure()
+      run: |
+        echo "::warning::Checkstyle found violations. Check the uploaded reports for details."
+

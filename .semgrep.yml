@@ -1,0 +1,59 @@
+# Semgrep configuration for Product Catalog Service
+# Documentation: https://semgrep.dev/docs/writing-rules/rule-syntax/
+
+rules:
+  # Spring Boot security best practices
+  - id: spring-boot-open-cors
+    patterns:
+      - pattern: |
+          @CrossOrigin($ARGS)
+      - pattern-not: |
+          @CrossOrigin(origins = {...})
+    message: "CORS configuration should specify allowed origins explicitly instead of allowing all origins"
+    languages:
+      - java
+    severity: WARNING
+    metadata:
+      category: security
+      technology:
+        - spring
+      cwe: "CWE-346: Origin Validation Error"
+
+  # JPA/Hibernate best practices
+  - id: missing-entity-annotation
+    patterns:
+      - pattern: |
+          public class $CLASS {
+            @Id
+            $TYPE $FIELD;
+            ...
+          }
+      - pattern-not-inside: |
+          @Entity
+          public class $CLASS {
+            ...
+          }
+    message: "Class with @Id annotation should be marked with @Entity"
+    languages:
+      - java
+    severity: ERROR
+    metadata:
+      category: correctness
+      technology:
+        - jpa
+        - hibernate
+
+  # Sensitive data in logs
+  - id: log-sensitive-data
+    patterns:
+      - pattern-either:
+          - pattern: log.$METHOD(..., $VAR.getPassword(), ...)
+          - pattern: log.$METHOD(..., $VAR.getToken(), ...)
+          - pattern: log.$METHOD(..., $VAR.getApiKey(), ...)
+    message: "Potential sensitive data being logged. Avoid logging passwords, tokens, or API keys"
+    languages:
+      - java
+    severity: WARNING
+    metadata:
+      category: security
+      cwe: "CWE-532: Insertion of Sensitive Information into Log File"

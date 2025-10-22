@@ -1,0 +1,27 @@
+# Semgrep ignore file
+
+# Build directories
+build/
+bin/
+.gradle/
+gradle/
+
+# Test results and reports
+build/reports/
+build/test-results/
+
+# Generated sources
+build/generated/
+
+# Binary files
+*.jar
+*.class
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+

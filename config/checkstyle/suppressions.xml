@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+    "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+    "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <!-- Suppress certain checks for generated code -->
+    <suppress checks="." files="[\\/]generated[\\/]"/>
+    
+    <!-- Suppress Javadoc checks for DTOs (they use Lombok) -->
+    <suppress checks="MissingJavadocMethod" files="[\\/]dto[\\/].*\.java$"/>
+    <suppress checks="MissingJavadocType" files="[\\/]dto[\\/].*\.java$"/>
+    
+    <!-- Suppress Javadoc checks for configuration classes -->
+    <suppress checks="MissingJavadocMethod" files="[\\/]config[\\/].*\.java$"/>
+    
+    <!-- Example: Suppress specific checks for test files -->
+    <!-- <suppress checks="MagicNumber" files="Test\.java$"/> -->
+</suppressions>
+

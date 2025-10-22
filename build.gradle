@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.2.0'
     id 'io.spring.dependency-management' version '1.1.4'
+    id 'checkstyle'
 }
 
 group = 'com.furniture.ecommerce'
@@ -45,5 +46,29 @@ tasks.named('test') {
 tasks.named('bootRun') {
     javaLauncher = javaToolchains.launcherFor {
         languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+// Checkstyle configuration
+checkstyle {
+    toolVersion = '10.12.5'
+    configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
+    ignoreFailures = false
+    maxWarnings = 0
+    maxErrors = 0
+    showViolations = true
+}
+
+tasks.named('checkstyleMain') {
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+tasks.named('checkstyleTest') {
+    reports {
+        xml.required = true
+        html.required = true
     }
 }
