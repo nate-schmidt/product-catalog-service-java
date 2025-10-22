@@ -27,8 +27,8 @@ A RESTful API service for managing furniture products in an e-commerce platform.
 
 ### Prerequisites
 
-- Java 17 or higher
-- Gradle (or use the included Gradle wrapper)
+- Java 17 (required)
+- Gradle (included via wrapper)
 
 ### Installation
 
@@ -38,14 +38,30 @@ git clone <repository-url>
 cd product-catalog-service
 ```
 
-2. Build the project:
+2. **Run the application:**
+
+**Option A: Use the convenience script (Recommended)**
 ```bash
-./gradlew build
+./run.sh
 ```
 
-3. Run the application:
+This script automatically sets up the Java 17 environment and starts the application.
+
+**Option B: Manual setup**
+```bash
+source setenv.sh
+./gradlew bootRun
+```
+
+**Option C: If Java 17 is already your default**
 ```bash
 ./gradlew bootRun
+```
+
+3. Build the project (optional):
+```bash
+source setenv.sh  # Ensure Java 17 is active
+./gradlew build
 ```
 
 The service will start on `http://localhost:8080/api`

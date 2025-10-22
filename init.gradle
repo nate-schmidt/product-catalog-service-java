@@ -1,0 +1,17 @@
+// Gradle initialization script to ensure Java 17 is used
+// This file is automatically loaded by Gradle if placed in the project root
+// or if specified with gradle --init-script init.gradle
+
+gradle.projectsLoaded {
+    rootProject {
+        // Ensure Java 17 toolchain is used for compilation
+        plugins.withId('java') {
+            java {
+                toolchain {
+                    languageVersion = JavaLanguageVersion.of(17)
+                }
+            }
+        }
+    }
+}
+
