@@ -9,7 +9,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,6 +22,11 @@ public class ProductServiceImpl implements ProductService {
     
     private final ProductRepository productRepository;
     
+    /**
+     * Constructor for ProductServiceImpl.
+     *
+     * @param productRepository the product repository
+     */
     @Autowired
     public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;

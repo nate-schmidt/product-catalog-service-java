@@ -37,7 +37,8 @@ public class DataInitializer implements CommandLineRunner {
             // Sofas
             new Product(
                 "Luxe 3-Seater Sofa",
-                "A modern and comfortable 3-seater sofa with plush cushions and sturdy wooden frame. Perfect for any living room.",
+                "A modern and comfortable 3-seater sofa with plush cushions "
+                + "and sturdy wooden frame. Perfect for any living room.",
                 "Sofas",
                 new BigDecimal("1299.99"),
                 15,
@@ -48,7 +49,8 @@ public class DataInitializer implements CommandLineRunner {
             ),
             new Product(
                 "Scandinavian L-Shape Sectional",
-                "Minimalist L-shaped sectional sofa with clean lines and neutral tones. Features reversible chaise.",
+                "Minimalist L-shaped sectional sofa with clean lines "
+                + "and neutral tones. Features reversible chaise.",
                 "Sofas",
                 new BigDecimal("1899.99"),
                 8,
@@ -59,7 +61,8 @@ public class DataInitializer implements CommandLineRunner {
             ),
             new Product(
                 "Classic Chesterfield Sofa",
-                "Timeless Chesterfield design with tufted leather upholstery and rolled arms. A statement piece for any room.",
+                "Timeless Chesterfield design with tufted leather upholstery "
+                + "and rolled arms. A statement piece for any room.",
                 "Sofas",
                 new BigDecimal("2499.99"),
                 5,

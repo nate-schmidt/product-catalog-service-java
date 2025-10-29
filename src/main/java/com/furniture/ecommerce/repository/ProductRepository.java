@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
@@ -38,13 +37,13 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByNameContainingIgnoreCase(String name);
     
     // Find products by multiple criteria using custom query
-    @Query("SELECT p FROM Product p WHERE " +
-           "(:category IS NULL OR LOWER(p.category) = LOWER(:category)) AND " +
-           "(:material IS NULL OR LOWER(p.material) = LOWER(:material)) AND " +
-           "(:color IS NULL OR LOWER(p.color) = LOWER(:color)) AND " +
-           "(:minPrice IS NULL OR p.price >= :minPrice) AND " +
-           "(:maxPrice IS NULL OR p.price <= :maxPrice) AND " +
-           "(:inStock IS NULL OR (CASE WHEN :inStock = true THEN p.stock > 0 ELSE true END))")
+    @Query("SELECT p FROM Product p WHERE "
+           + "(:category IS NULL OR LOWER(p.category) = LOWER(:category)) AND "
+           + "(:material IS NULL OR LOWER(p.material) = LOWER(:material)) AND "
+           + "(:color IS NULL OR LOWER(p.color) = LOWER(:color)) AND "
+           + "(:minPrice IS NULL OR p.price >= :minPrice) AND "
+           + "(:maxPrice IS NULL OR p.price <= :maxPrice) AND "
+           + "(:inStock IS NULL OR (CASE WHEN :inStock = true THEN p.stock > 0 ELSE true END))")
     List<Product> searchProducts(@Param("category") String category,
                                 @Param("material") String material,
                                 @Param("color") String color,
@@ -53,10 +52,10 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
                                 @Param("inStock") Boolean inStock);
     
     // Find products within specific dimensions
-    @Query("SELECT p FROM Product p WHERE " +
-           "(:maxWidth IS NULL OR p.width <= :maxWidth) AND " +
-           "(:maxHeight IS NULL OR p.height <= :maxHeight) AND " +
-           "(:maxDepth IS NULL OR p.depth <= :maxDepth)")
+    @Query("SELECT p FROM Product p WHERE "
+           + "(:maxWidth IS NULL OR p.width <= :maxWidth) AND "
+           + "(:maxHeight IS NULL OR p.height <= :maxHeight) AND "
+           + "(:maxDepth IS NULL OR p.depth <= :maxDepth)")
     List<Product> findByMaxDimensions(@Param("maxWidth") Double maxWidth,
                                      @Param("maxHeight") Double maxHeight,
                                      @Param("maxDepth") Double maxDepth);

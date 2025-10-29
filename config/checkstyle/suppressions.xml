@@ -14,7 +14,19 @@
     <!-- Suppress Javadoc checks for configuration classes -->
     <suppress checks="MissingJavadocMethod" files="[\\/]config[\\/].*\.java$"/>
     
-    <!-- Example: Suppress specific checks for test files -->
-    <!-- <suppress checks="MagicNumber" files="Test\.java$"/> -->
+    <!-- Suppress MethodName check for test files (allow underscores in test names) -->
+    <suppress checks="MethodName" files="Test\.java$"/>
+    
+    <!-- Suppress AvoidStarImport for test files (static imports are acceptable) -->
+    <suppress checks="AvoidStarImport" files="Test\.java$"/>
+    
+    <!-- Suppress ConstantName for logger fields (lowercase logger is acceptable) -->
+    <suppress checks="ConstantName" files=".*" message="logger"/>
+    
+    <!-- Suppress MethodLength for DataInitializer.run() (data initialization method) -->
+    <suppress checks="MethodLength" files="DataInitializer\.java$"/>
+    
+    <!-- Suppress MissingJavadocMethod for repository query methods (Spring Data JPA) -->
+    <suppress checks="MissingJavadocMethod" files="[\\/]repository[\\/].*\.java$"/>
 </suppressions>
 

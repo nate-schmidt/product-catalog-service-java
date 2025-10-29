@@ -1,6 +1,13 @@
 package com.furniture.ecommerce.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
+import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -53,9 +60,27 @@ public class Product {
     private LocalDateTime updatedAt;
     
     // Constructors
+    /**
+     * Default constructor.
+     */
     public Product() {
     }
     
+    /**
+     * Constructor with all fields.
+     *
+     * @param name product name
+     * @param description product description
+     * @param category product category
+     * @param price product price
+     * @param stock stock quantity
+     * @param width product width
+     * @param height product height
+     * @param depth product depth
+     * @param material product material
+     * @param color product color
+     * @param imageUrl product image URL
+     */
     public Product(String name, String description, String category, BigDecimal price, 
                    Integer stock, Double width, Double height, Double depth, 
                    String material, String color, String imageUrl) {
@@ -199,17 +224,17 @@ public class Product {
     
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", price=" + price +
-                ", stock=" + stock +
-                ", width=" + width +
-                ", height=" + height +
-                ", depth=" + depth +
-                ", material='" + material + '\'' +
-                ", color='" + color + '\'' +
-                '}';
+        return "Product{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", category='" + category + '\''
+                + ", price=" + price
+                + ", stock=" + stock
+                + ", width=" + width
+                + ", height=" + height
+                + ", depth=" + depth
+                + ", material='" + material + '\''
+                + ", color='" + color + '\''
+                + '}';
     }
 } 
